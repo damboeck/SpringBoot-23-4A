@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://localhost/js/jquery/jquery-3.6.0.min.js"></script>
+    <script>
+    // über document
+    function check() {
+        let input = document.getElementById("eingabefeld");
+        let t = input.value;
+        t = t.toLowerCase().replaceAll(/_/g,'').replaceAll(/[^a-z0-9\-]/g,'');
+        input.value = t;
+    }
+    // mit jquery
+    function check1() {
+        let t = $('#eingabefeld1').val();
+        t = t.toLowerCase().replaceAll(/_/g,'').replaceAll(/[^a-z0-9\-]/g,'');
+        $('#eingabefeld1').val(t);
+    }
+    </script>
+</head>
+<body>
+    <input type="text" size="20" oninput="check()" id="eingabefeld"/><br>
+    <input type="text" size="20" oninput="check1()" id="eingabefeld1"/><br>
+
+</body>
+</html>
